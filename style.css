@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -17,7 +18,7 @@ html {
 
   /* rest of the colors */
   --black: #212121;
-  --white: #fff;
+  --white: #ffffff;
   --grey: #757575;
   --skyblue: #2196f3;
   --darkWhite: #f5f4fa;
@@ -28,15 +29,14 @@ html {
   --paragraphColor: var(--grey);
   --textHoverColor: var(--skyblue);
   --footerColor: #2f303a;
-  --borderRadius: 0.25rem;
+  --borderRadius: 4px;
   --letterSpacing: 1px;
+  --defaultDesktopPadding: 94px;
   /* --transition: 0.3s ease-in-out all; */
 }
 
 body {
   background: var(--backgroundColor);
-  font-family: "Roboto", sans-serif;
-  letter-spacing: var(--letterSpacing);
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
@@ -54,7 +54,6 @@ h5 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1;
-  text-transform: capitalize;
 }
 
 h1 {
@@ -93,6 +92,19 @@ ul {
   margin: 0 auto;
 }
 
+.btn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  font-size: 1rem;
+  padding: 10px 24px;
+  background-color: var(--skyblue);
+  color: var(--white);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+}
+
 /*Header*/
 
 /*Logo*/
@@ -108,7 +120,7 @@ ul {
   color: var(--skyblue);
 }
 
-/*Navigation*/
+/*Navigation section*/
 
 .navbar {
   display: flex;
@@ -181,4 +193,98 @@ ul {
 .nav-email:hover svg,
 .nav-number:hover svg {
   fill: var(--skyblue);
+}
+
+/*Hero Section*/
+
+.hero {
+  background: url("assets/images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 32.5rem;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 48, 58, 0.4);
+  z-index: 1;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 30px;
+  text-align: center;
+  padding-top: 10.5rem;
+}
+
+.hero-text {
+  text-transform: uppercase;
+  line-height: 60px;
+  color: var(--white);
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.hero-container .btn {
+  margin: 0 auto;
+}
+
+.hero-text,
+.hero-container .btn {
+  z-index: 2;
+}
+
+/*Activity section*/
+
+.activity {
+  padding-top: var(--defaultDesktopPadding);
+}
+
+/*Advantages article*/
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+}
+
+.advantages-item {
+  max-width: 270px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.advantages-item_header {
+  border-radius: var(--borderRadius);
+  background-color: var(--darkWhite);
+  padding: 25px 100px;
+}
+
+.advantages-item_footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.advantages-item_title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.advantages-item_descr {
+  color: var(--grey);
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 14px;
 }
