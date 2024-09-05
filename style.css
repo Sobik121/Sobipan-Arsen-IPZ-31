@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 *,
 ::after,
 ::before {
@@ -61,6 +61,7 @@ h1 {
 }
 
 h2 {
+  font-weight: 700;
   font-size: 2.25rem;
 }
 
@@ -92,6 +93,8 @@ ul {
   margin: 0 auto;
 }
 
+/* Buttons */
+
 .btn {
   display: block;
   width: 200px;
@@ -105,9 +108,39 @@ ul {
   cursor: pointer;
 }
 
-/*Header*/
+/* Title */
 
-/*Logo*/
+.title {
+  text-align: center;
+}
+
+/* Socials */
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.social:hover {
+  border-radius: 50%;
+  background-color: var(--skyblue);
+}
+
+.social:hover svg {
+  fill: var(--white);
+}
+
+/* Header */
+
+/* Logo */
 
 .logo {
   font-family: "Raleway", sans-serif;
@@ -281,7 +314,6 @@ ul {
 
 .advantages-item_title {
   text-transform: uppercase;
-  font-weight: 700;
 }
 
 .advantages-item_descr {
@@ -335,4 +367,52 @@ ul {
   text-align: center;
   text-transform: uppercase;
   color: var(--white);
+}
+
+/*Our team*/
+
+.team {
+  background-color: var(--darkWhite);
+  padding-top: var(--defaultDesktopPadding);
+  padding-bottom: var(--defaultDesktopPadding);
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding-top: 50px;
+}
+
+.team-member {
+  display: block;
+  max-width: 270px;
+  width: 100%;
+  height: auto;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.team-member_footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 30px;
+  text-align: center;
+}
+
+.team-member_info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.team-member_name {
+  font-weight: 500;
+}
+
+.team-member_job {
+  font-weight: 400;
+  color: var(--grey);
 }
