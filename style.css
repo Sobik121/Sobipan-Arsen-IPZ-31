@@ -450,6 +450,12 @@ ul {
 .customer-card:hover {
   border: 1px solid var(--skyblue);
 }
+
+.customer-icon_wrapper {
+  display: block;
+  padding: 10px 20px;
+}
+
 .customer-card:hover svg {
   fill: var(--skyblue);
 }
