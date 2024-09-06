@@ -22,6 +22,7 @@ html {
   --grey: #757575;
   --skyblue: #2196f3;
   --darkWhite: #f5f4fa;
+  --borderCardsColor: #afb1b8;
 
   /* rest of the vars */
   --backgroundColor: var(--white);
@@ -52,7 +53,6 @@ h4,
 h5 {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
   line-height: 1;
 }
 
@@ -70,6 +70,7 @@ h3 {
 }
 
 h4 {
+  font-weight: 700;
   font-size: 0.875rem;
 }
 
@@ -176,6 +177,7 @@ ul {
   height: 80px;
   padding-top: 4px;
   border-bottom: 4px solid transparent;
+  font-weight: 500;
 }
 
 .nav-item:hover a {
@@ -206,6 +208,7 @@ ul {
   height: 80px;
   cursor: pointer;
   column-gap: 10px;
+  font-weight: 500;
 }
 
 .number-icon,
@@ -415,4 +418,38 @@ ul {
 .team-member_job {
   font-weight: 400;
   color: var(--grey);
+}
+
+/* Customer Section */
+
+.customers {
+  padding-top: var(--defaultDesktopPadding);
+  padding-bottom: var(--defaultDesktopPadding);
+}
+
+.customer-cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.customer-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 170px;
+  width: auto;
+  border: 1px solid var(--borderCardsColor);
+  padding: 1rem 2rem;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+}
+
+.customer-card:hover {
+  border: 1px solid var(--skyblue);
+}
+.customer-card:hover svg {
+  fill: var(--skyblue);
 }
