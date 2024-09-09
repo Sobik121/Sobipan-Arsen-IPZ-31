@@ -72,6 +72,7 @@ h3 {
 h4 {
   font-weight: 700;
   font-size: 0.875rem;
+  text-transform: uppercase;
 }
 
 a {
@@ -101,12 +102,20 @@ ul {
   width: 200px;
   height: 50px;
   font-size: 1rem;
-  padding: 10px 24px;
   background-color: var(--skyblue);
   color: var(--white);
   border: transparent;
   border-radius: var(--borderRadius);
   cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
 }
 
 /* Title */
@@ -118,6 +127,7 @@ ul {
 /* Socials */
 
 .socials {
+  width: 206px;
   display: flex;
   justify-content: space-between;
 }
@@ -139,6 +149,15 @@ ul {
   fill: var(--white);
 }
 
+footer .social {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+footer .social svg {
+  fill: var(--white);
+}
+
 /* Header */
 
 /* Logo */
@@ -148,10 +167,15 @@ ul {
   font-weight: 700;
   font-size: 1.625rem;
   color: var(--textColor);
+  line-height: 31px;
 }
 
 .logo span {
   color: var(--skyblue);
+}
+
+footer .logo {
+  color: var(--white);
 }
 
 /*Navigation section*/
@@ -458,4 +482,70 @@ ul {
 
 .customer-card:hover svg {
   fill: var(--skyblue);
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--footerColor);
+  padding: 60px 0 60px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.footer-contact-info a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 3%;
+}
+
+.footer-contact-info a:first-child {
+  color: var(--white);
+}
+
+.footer-socials,
+.footer-mailing {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-top: 0.75rem;
+}
+
+.footer h4 {
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+}
+
+.footer-email-form {
+  display: flex;
+  column-gap: 12px;
+}
+
+#footer-email {
+  display: block;
+  max-width: 450px;
+  width: 358px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--borderRadius);
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 500;
 }
