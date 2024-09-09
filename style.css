@@ -118,13 +118,29 @@ ul {
   column-gap: 10px;
 }
 
+#btn-close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  box-shadow: 0 0 0;
+  line-height: 0.5;
+  padding-left: 1px;
+}
+
 /* Title */
 
 .title {
   text-align: center;
 }
 
-/* Socials */
+/* Socials section */
 
 .socials {
   width: 206px;
@@ -158,7 +174,134 @@ footer .social svg {
   fill: var(--white);
 }
 
-/* Header */
+/* Modal */
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  position: absolute;
+  max-width: 528px;
+  width: 100%;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  border-radius: var(--borderRadius);
+}
+
+.modal-content button {
+  box-shadow: 0 4px 5px -4px var(--black);
+  margin: 0 auto;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding-top: 12px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.form-row label {
+  color: var(--grey);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.form-row input,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(22, 22, 22, 0.2);
+  border-radius: var(--borderRadius);
+  padding: 12px;
+  resize: none;
+}
+
+.form-row input {
+  padding-left: 40px;
+}
+
+.form-row input:focus,
+textarea:focus {
+  outline: transparent;
+  border: 1px solid var(--skyblue);
+}
+
+.form-row textarea::placeholder {
+  color: var(--grey);
+  opacity: 0.5;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container svg {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+.input-container input:focus + svg {
+  fill: var(--skyblue);
+}
+
+.form-row_checkbox {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--grey);
+  padding-left: 13px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.form-row_checkbox input {
+  height: 15px;
+  width: 15px;
+}
+
+.form-row_checkbox label {
+  line-height: 24px;
+  letter-spacing: 0.4px;
+}
+
+.form-row_checkbox label a {
+  text-decoration: underline;
+  color: var(--skyblue);
+}
+
+/* Header section*/
 
 /* Logo */
 
@@ -178,7 +321,7 @@ footer .logo {
   color: var(--white);
 }
 
-/*Navigation section*/
+/* Navigation */
 
 .navbar {
   display: flex;
@@ -255,7 +398,7 @@ footer .logo {
   fill: var(--skyblue);
 }
 
-/*Hero Section*/
+/* Hero Section */
 
 .hero {
   background: url("assets/images/hero.jpg");
@@ -302,14 +445,14 @@ footer .logo {
   z-index: 2;
 }
 
-/*Activity section*/
+/* Activity section */
 
 .activity {
   padding-top: var(--defaultDesktopPadding);
   padding-bottom: var(--defaultDesktopPadding);
 }
 
-/*Advantages article*/
+/* Advantages article */
 
 .advantages {
   display: grid;
@@ -350,7 +493,7 @@ footer .logo {
   font-size: 14px;
 }
 
-/*Occupation article*/
+/* Occupation article */
 
 .occupation {
   padding-top: var(--defaultDesktopPadding);
@@ -396,7 +539,7 @@ footer .logo {
   color: var(--white);
 }
 
-/*Our team*/
+/* Our team */
 
 .team {
   background-color: var(--darkWhite);
