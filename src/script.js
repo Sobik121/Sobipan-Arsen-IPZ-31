@@ -8,16 +8,12 @@ if (modal) {
 
   const openModal = () => {
     modal.classList.add("show-modal");
-    overlay.classList.add("show-modal");
     document.querySelector("body").style.overflowY = "hidden";
-    document.querySelector("body").style.paddingRight = "16px";
   };
 
   const closeModal = () => {
     modal.classList.remove("show-modal");
-    overlay.classList.remove("show-modal");
     document.querySelector("body").style.overflowY = "auto";
-    document.querySelector("body").style.paddingRight = "0";
   };
 
   openModalBtn.addEventListener("click", openModal);

@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  letter-spacing: var(--letterSpacing);
 }
 
 html {
@@ -32,7 +33,7 @@ html {
   --footerColor: #2f303a;
 
   --borderRadius: 4px;
-  --letterSpacing: 1px;
+  --letterSpacing: 0.03em;
   --defaultDesktopPadding: 94px;
   --transition: 0.3s ease-in-out all;
   --shadow-1: 0 3px 6px -1px rgba(0, 0, 0, 0.3),
@@ -111,7 +112,7 @@ ul {
   border-radius: var(--borderRadius);
   cursor: pointer;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.06em;
 }
 
 .btn-email {
@@ -135,6 +136,10 @@ ul {
   box-shadow: 0 0 0;
   line-height: 0.5;
   padding-left: 1px;
+}
+
+#btn-close-modal:hover {
+  color: var(--skyblue);
 }
 
 /* Title */
@@ -259,7 +264,7 @@ textarea {
 .form-row input:focus,
 textarea:focus {
   outline: transparent;
-  border: 1px solid var(--skyblue);
+  border: 1px solid var(--textHoverColor);
 }
 
 .form-row textarea::placeholder {
@@ -306,7 +311,7 @@ textarea:focus {
 
 .form-row_checkbox label a {
   text-decoration: underline;
-  color: var(--skyblue);
+  color: var(--textHoverColor);
 }
 
 /* Header section*/
@@ -322,7 +327,6 @@ header {
   font-weight: 700;
   font-size: 1.625rem;
   color: var(--textColor);
-  line-height: 31px;
 }
 
 .logo span {
@@ -339,6 +343,7 @@ footer .logo {
   display: flex;
   align-items: center;
   height: 80px;
+  letter-spacing: 0.02em;
 }
 
 .nav-menu {
@@ -360,7 +365,7 @@ footer .logo {
 }
 
 .nav-item:hover a {
-  color: var(--skyblue);
+  color: var(--textHoverColor);
 }
 
 .nav-item:hover {
@@ -370,6 +375,7 @@ footer .logo {
 .nav-link {
   display: block;
   color: var(--black);
+  line-height: 80px;
 }
 
 .nav-info {
@@ -390,19 +396,19 @@ footer .logo {
   font-weight: 500;
 }
 
-.number-icon,
-.email-icon {
-  padding-top: 3px;
-}
-
-.nav-email span,
-.nav-number span {
+.nav-email a,
+.nav-number a {
   color: var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  line-height: 80px;
 }
 
-.nav-email:hover span,
-.nav-number:hover span {
-  color: var(--skyblue);
+.nav-email:hover a,
+.nav-number:hover a {
+  color: var(--textHoverColor);
 }
 
 .nav-email:hover svg,
@@ -419,6 +425,7 @@ footer .logo {
   height: 37.5rem;
   position: relative;
   z-index: 0;
+  margin-top: -1px;
 }
 
 .hero-overlay {
@@ -445,7 +452,7 @@ footer .logo {
   color: var(--white);
   font-size: 44px;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 0.06em;
 }
 
 .hero-container .btn {
@@ -494,12 +501,8 @@ footer .logo {
   row-gap: 10px;
 }
 
-.advantages-item_title {
-  text-transform: uppercase;
-}
-
 .advantages-item_descr {
-  color: var(--grey);
+  color: var(--paragraphColor);
   font-weight: 400;
   line-height: 24px;
   font-size: 14px;
@@ -595,8 +598,9 @@ footer .logo {
 }
 
 .team-member_job {
+  font-size: 1rem;
   font-weight: 400;
-  color: var(--grey);
+  color: var(--paragraphColor);
 }
 
 /* Customer Section */
@@ -619,7 +623,7 @@ footer .logo {
   justify-content: center;
   align-items: center;
   max-width: 170px;
-  width: auto;
+  height: 100%;
   border: 1px solid var(--borderCardsColor);
   padding: 1rem 2rem;
   border-radius: var(--borderRadius);
@@ -643,7 +647,7 @@ footer .logo {
 
 footer {
   background-color: var(--footerColor);
-  padding: 60px 0 60px 0;
+  padding: 60px 0;
 }
 
 .footer {
@@ -669,7 +673,6 @@ footer {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-weight: 400;
-  letter-spacing: 3%;
 }
 
 .footer-contact-info a:first-child {
@@ -684,13 +687,18 @@ footer {
   padding-top: 0.75rem;
 }
 
+.footer-mailing {
+  padding-top: calc(0.75rem + 8px);
+}
+
 .footer h4 {
   color: var(--white);
-  letter-spacing: var(--letterSpacing);
 }
 
 .footer-email-form {
   display: flex;
+  flex-direction: row;
+  padding: 0;
   column-gap: 12px;
 }
 
@@ -704,10 +712,15 @@ footer {
   padding: 15px;
   font-size: 1rem;
   font-weight: 500;
+  color: white;
+}
+
+#footer-email:focus {
+  outline: none;
+  border-color: var(--white);
 }
 
 /* Tabs */
-
 .hidden {
   display: none;
 }
@@ -767,7 +780,6 @@ footer {
   color: var(--white);
   font-size: 1.125rem;
   line-height: 1.6;
-  letter-spacing: 0.03em;
   background-color: rgba(33, 150, 243, 0.9);
   width: 370px;
   height: 100%;
@@ -796,10 +808,11 @@ footer {
   line-height: 2;
   font-size: 1.125rem;
   text-transform: capitalize;
+  letter-spacing: 0.06em;
 }
 
 .card-footer p {
   line-height: 1.875;
   font-size: 1rem;
-  color: var(--grey);
+  color: var(--paragraphColor);
 }
