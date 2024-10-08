@@ -49,7 +49,9 @@ html {
   --font-24: 1.5rem;
   --font-26: 1.625rem;
   --font-28: 1.75rem;
+  --font-34: 2.125rem;
   --font-36: 2.25rem;
+  --font-40: 2.5rem;
   --font-44: 2.75rem;
 }
 
@@ -157,6 +159,37 @@ ul {
   color: var(--skyblue);
 }
 
+#close-sidebar-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: white;
+  cursor: pointer;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+
+#close-sidebar-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--black);
+  transition: 0.2s ease-in-out all;
+}
+
+#close-sidebar-btn:hover span {
+  background-color: var(--skyblue);
+}
+
+#close-sidebar-btn span:nth-child(1) {
+  transform: rotate(45deg);
+}
+#close-sidebar-btn span:nth-child(2) {
+  transform: rotate(-45deg) translate(2px, -2px);
+}
+
 /* Title */
 
 .title {
@@ -177,10 +210,11 @@ ul {
   justify-content: center;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
 
 .social:hover {
-  border-radius: 50%;
   background-color: var(--skyblue);
 }
 
@@ -349,6 +383,7 @@ header {
 }
 
 .logo span {
+  font-family: "Raleway", sans-serif;
   color: var(--skyblue);
 }
 
@@ -380,6 +415,7 @@ footer .logo {
   cursor: pointer;
   height: 80px;
   font-weight: 500;
+  transition: 0.1s ease all;
 }
 
 .nav-item:hover a {
@@ -387,12 +423,18 @@ footer .logo {
 }
 
 .nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-item::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   background: var(--skyblue);
+  transition: 0.3s ease all;
+  transform: scaleX(0);
   height: 4px;
   border-radius: 10px;
 }
@@ -401,6 +443,22 @@ footer .logo {
   display: block;
   color: var(--black);
   line-height: 80px;
+  transition: var(--transition);
+}
+
+.current-page {
+  color: var(--skyblue);
+}
+
+.current-page::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--skyblue);
+  height: 4px;
+  border-radius: 10px;
 }
 
 .nav-info {
@@ -427,6 +485,7 @@ footer .logo {
   align-items: center;
   column-gap: 10px;
   line-height: 80px;
+  transition: 0.2s ease-in-out all;
 }
 
 .nav-email:hover a,
@@ -437,6 +496,118 @@ footer .logo {
 .nav-email:hover svg,
 .nav-number:hover svg {
   fill: var(--skyblue);
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-color: transparent;
+  background: var(--white);
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--black);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar * {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 48px 83px 48px 40px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.show-sidebar {
+  transform: translateX(0%);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.links a {
+  color: var(--black);
+  line-height: 48px;
+  font-size: var(--font-40);
+  transition: 0.2s ease-in-out all;
+}
+
+.links a:hover {
+  color: var(--skyblue);
+}
+
+.sidebar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar-info .number {
+  text-decoration: none;
+  color: var(--skyblue);
+  font-size: var(--font-34);
+  line-height: 40px;
+}
+
+.sidebar-info .email {
+  color: var(--grey);
+  font-size: var(--font-24);
+  line-height: 28px;
+  margin-bottom: 2rem;
+}
+
+.sidebar-socials {
+  display: flex;
+  width: 357px;
+  justify-content: space-between;
+}
+
+.sidebar-socials li {
+  position: relative;
+}
+
+.sidebar-socials li:not(:last-child)::before {
+  position: absolute;
+  left: 0;
+  right: -10px;
+  height: 100%;
+  content: "";
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.sidebar-socials a {
+  color: var(--skyblue);
+  text-decoration: none;
+  font-size: var(--font-18);
+  line-height: 22px;
 }
 
 /* Hero Section */
@@ -621,18 +792,18 @@ footer .logo {
   row-gap: 10px;
 }
 
-.team-member_name {
+.team-member_info h3 {
   font-weight: 500;
 }
 
-.team-member_job {
+.team-member_info p {
   font-size: var(--font-16);
   font-weight: 400;
   color: var(--paragraphColor);
 }
 
-.team-member_name,
-.team-member_job {
+.team-member_info h3,
+.team-member_info p {
   line-height: 19px;
 }
 
@@ -660,15 +831,15 @@ footer .logo {
   padding: 1rem 2rem;
   border-radius: var(--borderRadius);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.customer-card svg {
+  transition: all 0.2s ease-in-out;
 }
 
 .customer-card:hover {
   border: 1px solid var(--skyblue);
-}
-
-.customer-icon_wrapper {
-  display: block;
-  padding: 10px 20px;
 }
 
 .customer-card:hover svg {
@@ -932,6 +1103,11 @@ footer {
     line-height: 25px;
   }
 
+  .customer-cards,
+  .team-members {
+    padding-top: 30px;
+  }
+
   .team-member {
     max-width: none;
     height: 536px;
@@ -1025,5 +1201,80 @@ footer {
 
   .form-row_checkbox label {
     font-size: var(--font-12);
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .nav-menu,
+  .nav-info {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger:hover span {
+    background-color: var(--skyblue);
+  }
+
+  .hero {
+    background: url("/assets/images/hero-phone.png") center no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .advantages,
+  .team-members,
+  .tabs-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .advantages-item_footer h4 {
+    text-align: center;
+  }
+
+  .team-member {
+    height: 622px;
+  }
+
+  .customer-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .footer-socials {
+    padding-top: 0;
+  }
+
+  .tabs-filter {
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 321px;
+    row-gap: 15px;
+  }
+
+  .tabs-cards .card {
+    width: 100%;
+    height: 404px;
+  }
+
+  .tabs-cards .card img {
+    object-fit: cover;
+  }
+  .sidebar {
+    display: grid;
   }
 }

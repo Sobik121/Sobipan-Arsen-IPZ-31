@@ -13,7 +13,7 @@
           <a href="index.html" class="logo"><span>Web</span>Studio</a>
           <ul class="nav-menu">
             <li class="nav-item">
-              <a href="#" class="nav-link">Студія</a>
+              <a href="#" class="nav-link current-page">Студія</a>
             </li>
             <li class="nav-item">
               <a href="portfolio.html" class="nav-link">Портфоліо</a>
@@ -59,6 +59,11 @@
               >
             </li>
           </ul>
+          <button type="button" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
       </div>
     </header>
@@ -181,8 +186,8 @@
               </picture>
               <div class="team-member_footer">
                 <div class="team-member_info">
-                  <h3 class="team-member_name">Ігор Дем'яненко</h3>
-                  <p class="team-member_job">Product Designer</p>
+                  <h3>Ігор Дем'яненко</h3>
+                  <p>Product Designer</p>
                 </div>
                 <ul class="socials">
                   <li>
@@ -274,8 +279,8 @@
               </picture>
               <div class="team-member_footer">
                 <div class="team-member_info">
-                  <h3 class="team-member_name">Ольга Рєпіна</h3>
-                  <p class="team-member_job">Frontend Developer</p>
+                  <h3>Ольга Рєпіна</h3>
+                  <p>Frontend Developer</p>
                 </div>
                 <ul class="socials">
                   <li>
@@ -370,8 +375,8 @@
               </picture>
               <div class="team-member_footer">
                 <div class="team-member_info">
-                  <h3 class="team-member_name">Микола Тарасов</h3>
-                  <p class="team-member_job">Marketing</p>
+                  <h3>Микола Тарасов</h3>
+                  <p>Marketing</p>
                 </div>
                 <ul class="socials">
                   <li>
@@ -466,8 +471,8 @@
               </picture>
               <div class="team-member_footer">
                 <div class="team-member_info">
-                  <h3 class="team-member_name">Михайло Єрмаков</h3>
-                  <p class="team-member_job">UI Designer</p>
+                  <h3>Михайло Єрмаков</h3>
+                  <p>UI Designer</p>
                 </div>
                 <ul class="socials">
                   <li>
@@ -985,7 +990,7 @@
               name="comment"
               id="comment"
               placeholder="Введіть текст"
-              rows="7"
+              rows="6"
             ></textarea>
           </div>
           <div class="form-row_checkbox">
@@ -1000,6 +1005,34 @@
       </div>
       <div class="overlay"></div>
     </div>
+
+    <aside class="sidebar">
+      <button type="button" id="close-sidebar-btn">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="links">
+        <li>
+          <a href="/">Студія</a>
+        </li>
+        <li>
+          <a href="portfolio.html">Портфоліо</a>
+        </li>
+        <li>
+          <a href="#">Контакти</a>
+        </li>
+      </ul>
+      <div class="sidebar-info">
+        <a href="tel:+380961111111" class="number">+38 096 111 11 11</a>
+        <a href="mailto:info@devstudio.com" class="email">info@devstudio.com</a>
+        <ul class="sidebar-socials">
+          <li><a href="instagram.com">Instagram</a></li>
+          <li><a href="x.com">Twitter</a></li>
+          <li><a href="facebook.com">Facebook</a></li>
+          <li><a href="linkedin.com">LinkedIn</a></li>
+        </ul>
+      </div>
+    </aside>
   </body>
   <script defer src="src/script.js"></script>
 </html>

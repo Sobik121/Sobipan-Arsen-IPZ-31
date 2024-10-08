@@ -16,7 +16,9 @@
               <a href="index.html" class="nav-link">Студія</a>
             </li>
             <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">Портфоліо</a>
+              <a href="portfolio.html" class="nav-link current-page"
+                >Портфоліо</a
+              >
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Контакти</a>
@@ -59,9 +61,15 @@
               >
             </li>
           </ul>
+          <button type="button" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
       </div>
     </header>
+
     <main>
       <div class="container">
         <section class="tabs">
@@ -232,6 +240,7 @@
         </section>
       </div>
     </main>
+
     <footer>
       <div class="container">
         <div class="footer">
@@ -324,6 +333,34 @@
         </div>
       </div>
     </footer>
+
+    <aside class="sidebar">
+      <button type="button" id="close-sidebar-btn">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="links">
+        <li>
+          <a href="/">Студія</a>
+        </li>
+        <li>
+          <a href="portfolio.html">Портфоліо</a>
+        </li>
+        <li>
+          <a href="#">Контакти</a>
+        </li>
+      </ul>
+      <div class="sidebar-info">
+        <a href="tel:+380961111111" class="number">+38 096 111 11 11</a>
+        <a href="mailto:info@devstudio.com" class="email">info@devstudio.com</a>
+        <ul class="sidebar-socials">
+          <li><a href="instagram.com">Instagram</a></li>
+          <li><a href="x.com">Twitter</a></li>
+          <li><a href="facebook.com">Facebook</a></li>
+          <li><a href="linkedin.com">LinkedIn</a></li>
+        </ul>
+      </div>
+    </aside>
   </body>
   <script defer src="src/script.js"></script>
 </html>

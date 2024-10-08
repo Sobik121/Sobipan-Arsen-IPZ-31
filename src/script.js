@@ -8,12 +8,10 @@ if (modal) {
 
   const openModal = () => {
     modal.classList.add("show-modal");
-    document.querySelector("body").style.overflowY = "hidden";
   };
 
   const closeModal = () => {
     modal.classList.remove("show-modal");
-    document.querySelector("body").style.overflowY = "auto";
   };
 
   openModalBtn.addEventListener("click", openModal);
@@ -56,3 +54,18 @@ if (cards) {
     });
   };
 }
+
+const openSidebarBtn = document.querySelector(".hamburger");
+const closeSidebarBtn = document.querySelector("#close-sidebar-btn");
+const sidebar = document.querySelector(".sidebar");
+
+const openSidebar = () => {
+  sidebar.classList.add("show-sidebar");
+};
+
+const closeSidebar = () => {
+  sidebar.classList.remove("show-sidebar");
+};
+
+openSidebarBtn.addEventListener("click", openSidebar);
+closeSidebarBtn.addEventListener("click", closeSidebar);
