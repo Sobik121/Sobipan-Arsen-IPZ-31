@@ -35,6 +35,8 @@ html {
   --borderRadius: 4px;
   --letterSpacing: 0.03em;
   --defaultDesktopPadding: 94px;
+  --defaultTabletPadding: 60px;
+
   --transition: 0.3s ease-in-out all;
   --shadow-1: 0 3px 6px -1px rgba(0, 0, 0, 0.3),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -78,6 +80,7 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: var(--font-36);
+  line-height: 42px;
 }
 
 h3 {
@@ -88,6 +91,7 @@ h4 {
   font-weight: 700;
   font-size: var(--font-14);
   text-transform: uppercase;
+  line-height: 16px;
 }
 
 a {
@@ -264,8 +268,12 @@ textarea {
   width: 100%;
   border: 1px solid rgba(22, 22, 22, 0.2);
   border-radius: var(--borderRadius);
-  padding: 12px;
+  padding: 11px;
   resize: none;
+}
+
+.textarea {
+  padding: 12px 16px;
 }
 
 .form-row input {
@@ -305,9 +313,8 @@ textarea:focus {
   font-size: var(--font-14);
   font-weight: 400;
   color: var(--grey);
-  padding-left: 13px;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  margin: 0 auto;
+  padding: 20px 0 30px 0;
 }
 
 .form-row_checkbox input {
@@ -338,6 +345,7 @@ header {
   font-weight: 700;
   font-size: var(--font-26);
   color: var(--textColor);
+  line-height: 31px;
 }
 
 .logo span {
@@ -434,9 +442,7 @@ footer .logo {
 /* Hero Section */
 
 .hero {
-  background: url("../assets/images/hero.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("../assets/images/hero.jpg") no-repeat center;
   height: 600px;
   position: relative;
   z-index: 0;
@@ -445,7 +451,9 @@ footer .logo {
 
 .hero-overlay {
   position: absolute;
-  left: 0;
+  max-width: 1600px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 100%;
   background-color: rgba(47, 48, 58, 0.4);
@@ -482,8 +490,7 @@ footer .logo {
 /* Activity section */
 
 .activity {
-  padding-top: var(--defaultDesktopPadding);
-  padding-bottom: var(--defaultDesktopPadding);
+  padding: var(--defaultDesktopPadding) 0 var(--defaultDesktopPadding) 0;
 }
 
 /* Advantages article */
@@ -575,8 +582,7 @@ footer .logo {
 
 .team {
   background-color: var(--darkWhite);
-  padding-top: var(--defaultDesktopPadding);
-  padding-bottom: var(--defaultDesktopPadding);
+  padding: var(--defaultDesktopPadding) 0 var(--defaultDesktopPadding) 0;
 }
 
 .team-members {
@@ -606,6 +612,7 @@ footer .logo {
   row-gap: 1rem;
   padding: 30px;
   text-align: center;
+  margin-top: -3px;
 }
 
 .team-member_info {
@@ -624,11 +631,15 @@ footer .logo {
   color: var(--paragraphColor);
 }
 
+.team-member_name,
+.team-member_job {
+  line-height: 19px;
+}
+
 /* Customer Section */
 
 .customers {
-  padding-top: var(--defaultDesktopPadding);
-  padding-bottom: var(--defaultDesktopPadding);
+  padding: var(--defaultDesktopPadding) 0 var(--defaultDesktopPadding) 0;
 }
 
 .customer-cards {
@@ -644,7 +655,7 @@ footer .logo {
   justify-content: center;
   align-items: center;
   max-width: 170px;
-  height: 100%;
+  height: 92px;
   border: 1px solid var(--borderCardsColor);
   padding: 1rem 2rem;
   border-radius: var(--borderRadius);
@@ -694,6 +705,7 @@ footer {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-weight: 400;
+  line-height: 16px;
 }
 
 .footer-contact-info a:first-child {
@@ -706,10 +718,6 @@ footer {
   flex-direction: column;
   row-gap: 20px;
   padding-top: 0.75rem;
-}
-
-.footer-mailing {
-  padding-top: calc(0.75rem + 8px);
 }
 
 .footer h4 {
@@ -838,7 +846,7 @@ footer {
   color: var(--paragraphColor);
 }
 
-/* Adaptive */
+/* Adaptive 768w */
 
 @media (max-width: 1200px) {
   h2 {
@@ -853,6 +861,7 @@ footer {
 
   .logo {
     font-size: var(--font-24);
+    line-height: 28px;
   }
 
   .nav-info {
@@ -876,10 +885,15 @@ footer {
     margin-left: 88px;
   }
 
+  .nav-menu svg {
+    height: 14px;
+  }
+
   .hero {
     height: 400px;
     background: url("/assets/images/hero-tablet.jpg") no-repeat;
     background-size: cover;
+    background-position: center;
   }
 
   .hero-container {
@@ -891,16 +905,19 @@ footer {
     line-height: 42px;
   }
 
-  .advantages {
+  .activity,
+  .team,
+  .customers {
+    padding: var(--defaultTabletPadding) 0 var(--defaultTabletPadding) 0;
+  }
+
+  .advantages,
+  .team-members {
     grid-template-columns: 1fr 1fr;
   }
 
   .occupation {
     display: none;
-  }
-
-  .team-members {
-    grid-template-columns: 1fr 1fr;
   }
 
   .customer-cards {
@@ -909,6 +926,10 @@ footer {
 
   .advantages-item {
     max-width: none;
+  }
+
+  .advantages-item p {
+    line-height: 25px;
   }
 
   .team-member {
@@ -933,7 +954,7 @@ footer {
   }
 
   .footer {
-    padding: 0 76px 0 89px;
+    padding: 0 61px 0 74px;
     row-gap: 60px;
   }
 
@@ -950,11 +971,13 @@ footer {
   .footer-mailing {
     width: 450px;
     margin: 0 auto;
+    padding-top: 0;
   }
 
   .footer-email-form {
     display: flex;
     flex-direction: column;
+    row-gap: 20px;
   }
 
   #footer-email {
@@ -969,8 +992,13 @@ footer {
     max-width: 450px;
   }
 
+  .tabs {
+    padding: 60px 0;
+  }
+
   .tabs-cards {
     grid-template-columns: 1fr 1fr;
+    padding-top: 30px;
   }
 
   .card {
@@ -983,11 +1011,19 @@ footer {
   }
 
   .card-description {
-    width: auto;
+    width: calc(100% + 2px);
   }
 
   .card-header img {
     height: 294px;
     width: 100%;
+  }
+
+  .modal-title {
+    line-height: 30px;
+  }
+
+  .form-row_checkbox label {
+    font-size: var(--font-12);
   }
 }
