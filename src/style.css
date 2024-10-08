@@ -1062,7 +1062,7 @@ footer {
 
   .hero {
     height: 400px;
-    background: url("/assets/images/hero-tablet.jpg") no-repeat;
+    background: url("../assets/images/hero-tablet.jpg") no-repeat;
     background-size: cover;
     background-position: center;
   }
@@ -1227,7 +1227,7 @@ footer {
   }
 
   .hero {
-    background: url("/assets/images/hero-phone.png") center no-repeat;
+    background: url("../assets/images/hero-phone.png") center no-repeat;
     background-size: cover;
     background-position: center;
   }
