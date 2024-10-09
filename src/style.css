@@ -1246,6 +1246,12 @@ footer {
     height: 622px;
   }
 
+  .team-member img {
+    height: 450px;
+    object-fit: cover;
+    width: 100%;
+  }
+
   .customer-cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -1276,5 +1282,25 @@ footer {
   }
   .sidebar {
     display: grid;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+    height: auto;
+  }
+
+  .team-member,
+  .footer-mailing,
+  .team-member img {
+    width: 100%;
+  }
+
+  .card-footer h4 {
+    line-height: 30px;
+  }
+
+  .card-footer p {
+    line-height: 26px;
   }
 }
